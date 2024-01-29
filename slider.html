@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider.css">
+    <title>Slide</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="images" id="images">
+            <img src="Mikey ༣.jpg" alt="" id="img1">
+            <img src="téléchargement.jpg" alt="" id="img2">
+            <img src="○♤TOKYO REVENGERS♤○.jpg" alt="" id="img3">
+            <img src="○♤MANJIRO SANO _MIKEY♤○.jpg" alt="" id="img4">
+            <img src="1366x768px, 720P free download _ Chifuyu Matsuno Tokyo Revengers, HD wallpaper.jpg" alt="" id="img44">
+            <img src="téléchargement (1).jpg" alt="" id="img5">
+            <img src="téléchargement (2).jpg" alt="" id="img6">
+            <img src="Nazuna Nanakusa よふかしのうた.jpg" alt="" id="img7">
+        </div>
+
+        <div class="buttons">
+            <div class="prev" id="prev" onclick="prevslide()">
+                       prev
+            </div>
+
+            <div class="next" id="next" onclick="nextslide()">
+                     next
+            </div>
+        </div>
+
+    
+    </div>
+
+    
+
+    <script>
+
+
+            const imags = document.getElementById('images');
+
+            //Fonction pour voir un peu de quelle manière déplacer l'élément dans l'espace
+
+          //La valeur initiale 
+            let currentvalue = 0;
+
+            function showSlide(index)
+            {
+                
+               const slidevalue = -index * 70 + '%';  // fixer la valeur en fonction de l'index
+               imags.style.transform = 'translateX(' + slidevalue + ')';//Déplaceer sur l'axe des abcisses
+
+            }
+
+            function prevslide()
+            {
+                currentvalue = (currentvalue - 1 + imags.children.length) % imags.children.length;
+                showSlide(currentvalue); 
+            }
+
+            function nextslide()
+            {
+                
+                currentvalue = (currentvalue + 1) % imags.children.length;
+                showSlide(currentvalue); 
+            }
+
+           
+
+    </script>
+    
+</body>
+</html>
